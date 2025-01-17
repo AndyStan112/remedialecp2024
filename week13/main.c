@@ -65,7 +65,8 @@ char ** get_lines(){
         char* p = strdup(buff);
         
         int len = strlen(p);
-
+        // "abc\0"
+        // "\3abc"
         for(int i=len;i>0;i--){
             p[i] = p[i-1];
         }
@@ -123,7 +124,7 @@ int main()
     //1
     char* str = "these are words";
     char** addrs = split_strings(str);
-    int i =0;
+
     print_matrix(addrs);
     free_matrix(addrs);
     printf("%s\n",str);
